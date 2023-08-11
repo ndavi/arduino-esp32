@@ -17,7 +17,7 @@ typedef enum
 class HttpsOTAUpdateClass {
 
     public:
-    void begin(const char *url, const char *cert_pem, UpdateNetworkInterface network_interface = UpdateNetworkInterface::DEFAULT_INTERFACE, bool skip_cert_common_name_check = false);
+    void begin(const char *url, const char *cert_pem, UpdateNetworkInterface network_interface = UpdateNetworkInterface::DEFAULT_IFC, bool skip_cert_common_name_check = false);
     void onHttpEvent(void (*http_event_cb_t)(HttpEvent_t *));
     HttpsOTAStatus_t status();
 

@@ -120,22 +120,22 @@ esp_err_t HttpsOTAUpdateClass::get_netif_config_from_type(UpdateNetworkInterface
 {
     esp_err_t error = ESP_OK;
     switch (network_interface) {
-        case UpdateNetworkInterface::DEFAULT_INTERFACE:
+        case UpdateNetworkInterface::DEFAULT_IFC:
             error = ESP_ERR_ESP_NETIF_IF_NOT_READY;
             break;
-        case UpdateNetworkInterface::WIFI_STA:
+        case UpdateNetworkInterface::WIFI_STA_IFC:
             netif_inherent_config = ESP_NETIF_INHERENT_DEFAULT_WIFI_STA();
             break;
-        case UpdateNetworkInterface::WIFI_AP:
+        case UpdateNetworkInterface::WIFI_AP_IFC:
             netif_inherent_config = ESP_NETIF_INHERENT_DEFAULT_WIFI_AP();
             break;
-        case UpdateNetworkInterface::ETHERNET:
+        case UpdateNetworkInterface::ETHERNET_IFC:
             netif_inherent_config = ESP_NETIF_INHERENT_DEFAULT_ETH();
             break;
-        case UpdateNetworkInterface::POINT_TO_POINT:
+        case UpdateNetworkInterface::POINT_TO_POINT_IFC:
             netif_inherent_config = ESP_NETIF_INHERENT_DEFAULT_PPP();
             break;
-        case UpdateNetworkInterface::SERIAL_LINE:
+        case UpdateNetworkInterface::SERIAL_LINE_IFC:
             netif_inherent_config = ESP_NETIF_INHERENT_DEFAULT_SLIP();
             break;
         default:
